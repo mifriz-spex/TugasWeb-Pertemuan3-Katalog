@@ -10,27 +10,49 @@
 </head>
 <body>
     <header>
-       <nav class="navbar navbar-expand-lg navbar-dark bg-danger">
-        <div class="container">
-            <a class="navbrand text-decoration-none text-white" href="./index.html">
-                <h1 class="h4 mb-0">Laptop<strong>IN</strong></h1>
-            </a>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-danger">
+            <div class="container">
+                <a class="navbrand text-decoration-none text-white" href="./index.html">
+                    <h1 class="h4 mb-0">Laptop<strong>IN</strong></h1>
+                </a>
 
-            <div class="collapse navbar-collapse">
-                <ul class="navbar-nav ms-auto nav-underline">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#produk">Produk</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#review">Ulasan</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#about">Tentang</a>
-                    </li>
-                </ul>
+                <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#menu-samping" aria-controls="menu-samping" aria-label="menu-samping">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="offcanvas offcanvas-end" tabindex="-1" id="menu-samping" aria-labelledby="hamburger">
+                
+                    <div class="offcanvas-header">
+                        <h5 class="offcanvas-title" id="menu-samping">Menu</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                    </div>
+
+                    <div class="offcanvas-header">
+                        <h5 class="offcanvas-title" id="menu-samping">Menu Navigasi</h5>
+                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                    </div>
+
+                    <div class="offcanvas-body">
+                        <ul class="navbar-nav ms-auto flex-grow-1 pe-3 nav-underline">
+                            <li class="nav-item ms-4">
+                                <a class="nav-link" href="#produk">Produk</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#review">Ulasan</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#about">Tentang</a>
+                            </li>
+                        </ul>
+
+                        <form class="d-flex" role="search">
+                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
+                        <button class="btn btn-outline-success bg-light text-dark" type="submit">Search</button>
+                        </form>
+                    </div>
+                </div>
             </div>
-        </div>
-       </nav>
+        </nav>
     </header>
 </body>
 </html>
