@@ -3,51 +3,62 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Katalog</title>
-    <meta description="Katalog belanja toko ..." content="Katalog barang barang yang dijual dari toko ...">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-    <link rel="stylesheet" href="./style.css">
+    <title>LaptopIN</title>
+    <meta name="description" content="Katalog laptop bisnis berkualitas dengan garansi resmi dan harga terjangkau.">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    
+    <link rel="stylesheet" href="style.css">
 </head>
-<body>
-    <header>
+<body class="d-flex flex-column min-vh-100 bg-light">
+
+    <header class="sticky-top shadow-sm">
         <nav class="navbar navbar-expand-lg navbar-dark bg-danger">
             <div class="container">
-                <a class="navbrand text-decoration-none text-white" href="./index.html">
-                    <h1 class="h4 mb-0">Laptop<strong>IN</strong></h1>
+                <a class="navbar-brand fw-bold text-white d-flex align-items-center gap-2" href="#hero">
+                    <i class="bi bi-laptop-fill fs-4"></i>
+                    <span>Laptop<strong class="text-warning">IN</strong></span>
                 </a>
 
-                <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#menu-samping" aria-controls="menu-samping" aria-label="menu-samping">
+                <button class="navbar-toggler border-0 shadow-none" type="button" data-bs-toggle="offcanvas" data-bs-target="#menuOffcanvas" aria-controls="menuOffcanvas" aria-label="Buka menu navigasi">
                     <span class="navbar-toggler-icon"></span>
                 </button>
 
-                <div class="offcanvas offcanvas-end" tabindex="-1" id="menu-samping" aria-labelledby="hamburger">
-                
-                    <div class="offcanvas-header">
-                        <h5 class="offcanvas-title" id="menu-samping">Menu</h5>
-                        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                <div class="offcanvas offcanvas-end text-bg-danger nav-underline" tabindex="-1" id="menuOffcanvas" aria-labelledby="judulOffcanvas">
+                    <div class="offcanvas-header border-bottom border-light-subtle">
+                        <h5 class="offcanvas-title fw-bold" id="judulOffcanvas">
+                            <i class="bi bi-laptop me-2"></i>LaptopIN Menu
+                        </h5>
+                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Tutup"></button>
                     </div>
 
-                    <div class="offcanvas-header">
-                        <h5 class="offcanvas-title" id="menu-samping">Menu Navigasi</h5>
-                        <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-                    </div>
-
-                    <div class="offcanvas-body">
-                        <ul class="navbar-nav ms-auto flex-grow-1 pe-3 nav-underline">
-                            <li class="nav-item ms-4">
-                                <a class="nav-link" href="#produk">Produk</a>
+                    <div class="offcanvas-body d-flex flex-column flex-lg-row justify-content-between align-items-lg-center">
+                        <ul class="navbar-nav mx-lg-auto mb-3 mb-lg-0 gap-lg-2">
+                            <li class="nav-item">
+                                <a class="nav-link text-white fw-semibold" href="#produk">
+                                    <i class="bi bi-grid me-1 d-lg-none"></i> Katalog Produk
+                                </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#layanan">Layanan</a>
+                                <a class="nav-link text-white fw-semibold" href="#layanan">
+                                    <i class="bi bi-gear-wide-connected me-1 d-lg-none"></i> Layanan
+                                </a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#about">Tentang</a>
+                                <a class="nav-link text-white fw-semibold" href="#tentang">
+                                    <i class="bi bi-info-circle me-1 d-lg-none"></i> Tentang
+                                </a>
                             </li>
                         </ul>
 
-                        <form class="d-flex" role="search">
-                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
-                        <button class="btn btn-outline-success bg-light text-dark" type="submit">Search</button>
+                        <form class="d-flex" role="search" onsubmit="event.preventDefault();">
+                            <div class="input-group">
+                                <input class="form-control form-control-sm" type="search" placeholder="Cari tipe laptop..." aria-label="Cari">
+                                <button class="btn btn-light text-danger fw-bold btn-sm" type="button">
+                                    <i class="bi bi-search"></i>
+                                </button>
+                            </div>
                         </form>
                     </div>
                 </div>
@@ -55,82 +66,291 @@
         </nav>
     </header>
 
-    <main>
+    <main class="flex-grow-1">
 
-        <section id="produk">
-            <h2>Katalog Produk</h2>
+        <section id="hero" class="bg-white py-4 py-md-5 border-bottom">
             <div class="container text-center">
-                <div class="row">
-                    <div class="col">
-                        <div class="card" style="width: 18rem;">
-                            <img src="./Hp830.png" class="card-img-top" alt="Laptop Hp 830" height="200">
-                            <div class="card-body">
-                                <h5 class="card-title">Hp 830</h5>
-                                <p class="card-text">HP EliteBook 830 Laptop bisnis premium dengan desain tipis elegan berbahan metal (silver). Performa tangguh untuk multitasking, keamanan tinggi, cocok untuk profesional dengan mobilitas tinggi.</p>
-                                <a href="#" class="btn btn-primary">Kunjungi</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="card" style="width: 18rem;">
-                            <img src="./T14.png" class="card-img-top" alt="Lenovo T14" height="200">
-                            <div class="card-body">
-                                <h5 class="card-title">Lenovo ThinkPad T14</h5>
-                                <p class="card-text">Lenovo ThinkPad T14 Laptop bisnis legendaris dengan desain hitam klasik yang tangguh. Menawarkan performa andal, keyboard ikonik yang nyaman, dan durabilitas tinggi untuk produktivitas maksimal di segala kondisi kerja.</p>
-                                <a href="#" class="btn btn-primary">Kunjungi</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="card" style="width: 18rem;">
-                            <img src="./E470.png" class="card-img-top" alt="Lenovo ThinkPad E470" height="200">
-                            <div class="card-body">
-                                <h5 class="card-title">Lenovo ThinkPad E470</h5>
-                                <p class="card-text">Lenovo ThinkPad E470 Laptop bisnis tangguh dengan performa grafis ekstra. Desain ThinkPad klasik berpadu dengan keandalan untuk produktivitas harian dan tugas grafis ringan.</p>
-                                <a href="#" class="btn btn-primary">Kunjungi</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="card" style="width: 18rem;">
-                            <img src="./T460.png" class="card-img-top" alt="Lenovo ThinkPad T460" height="200">
-                            <div class="card-body">
-                                <h5 class="card-title">Lenovo ThinkPad T460</h5>
-                                <p class="card-text">Laptop bisnis andal dengan keseimbangan sempurna antara portabilitas dan performa. Desain kokoh khas ThinkPad, ideal untuk pekerja dinamis yang membutuhkan perangkat tangguh untuk tugas sehari-hari.</p>
-                                <a href="#" class="btn btn-primary">Kunjungi</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="card" style="width: 18rem;">
-                            <img src="./X13.png" class="card-img-top" alt="Lenovo ThinkPad X13" height="200">
-                            <div class="card-body">
-                                <h5 class="card-title">Lenovo ThinkPad X13</h5>
-                                <p class="card-text">Laptop ringkas 11,6 inci dengan desain ekstra tangguh dan pelindung bodi yang kokoh. Sangat cocok untuk pelajar atau pekerja lapangan yang membutuhkan perangkat tahan banting untuk komputasi harian.</p>
-                                <a href="#" class="btn btn-primary">Kunjungi</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="card" style="width: 18rem;">
-                            <img src="./X270.png" class="card-img-top" alt="Lenovo ThinkPad X270" height="200">
-                            <div class="card-body">
-                                <h5 class="card-title">Lenovo ThinkPad X270</h5>
-                                <p class="card-text">Laptop bisnis ultraportabel 12,5 inci yang legendaris. Menawarkan mobilitas maksimal, daya tahan baterai yang awet, dan performa tangguh khas ThinkPad untuk profesional yang sering bepergian.</p>
-                                <a href="#" class="btn btn-primary">Kunjungi</a>
-                            </div>
-                        </div>
-                    </div>
-        
-
-                    </div>
+                <span class="badge bg-danger-subtle text-danger px-3 py-2 rounded-pill fw-bold mb-2">
+                    <i class="bi bi-patch-check-fill me-1"></i> Unit Teruji & 100% Bergaransi
+                </span>
+                <h1 class="fw-bold text-dark hero-title mt-2 mb-3">Pusat Laptop Bisnis & Profesional</h1>
+                <p class="text-muted col-lg-8 mx-auto mb-4">
+                    Koleksi laptop pilihan dengan kondisi fisik mulus, baterai prima, dan siap pakai untuk kebutuhan kerja maupun kuliah.
+                </p>
+                <div class="d-flex justify-content-center gap-2 flex-wrap">
+                    <a href="#produk" class="btn btn-danger px-4 py-2 fw-semibold shadow-sm">
+                        <i class="bi bi-bag-check me-1"></i> Lihat Katalog
+                    </a>
+                    <a href="#layanan" class="btn btn-outline-secondary px-4 py-2 fw-semibold">
+                        <i class="bi bi-shield-check me-1"></i> Layanan Kami
+                    </a>
+                </div>
             </div>
         </section>
+
+        <section id="produk" class="py-5">
+            <div class="container">
+                
+                <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-center mb-4 gap-2">
+                    <div>
+                        <h2 class="fw-bold mb-1">Katalog Pilihan Laptop</h2>
+                        <p class="text-muted small mb-0">Sesuaikan pilihan laptop dengan kebutuhan komputasi dan anggaranmu.</p>
+                    </div>
+                </div>
+
+                <div class="row g-4">
+
+                    <div class="col-12 col-sm-6 col-lg-4">
+                        <div class="card h-100 shadow-sm rounded-3 card-product overflow-hidden">
+                            <div class="position-relative">
+                                <img src="./Hp830.png" onerror="this.onerror=null; this.src='https://placehold.co/600x400/f1f3f5/dc3545?text=HP+EliteBook+830';" class="card-img-top product-img" alt="HP EliteBook 830">
+                            </div>
+                            <div class="card-body d-flex flex-column p-4">
+                                <h5 class="card-title fw-bold text-dark mb-1">HP EliteBook 830</h5>
+                                <p class="card-text text-muted small mb-3">
+                                    Laptop bisnis bodi aluminium silver premium. Sangat ringan, aman, dan tangguh untuk mobilitas kerja harian.
+                                </p>
+                                <ul class="list-unstyled small text-secondary mb-4">
+                                    <li><i class="bi bi-cpu text-danger me-2"></i>Intel Core i5 Gen 8</li>
+                                    <li><i class="bi bi-memory text-danger me-2"></i>RAM 8GB / SSD 256GB NVMe</li>
+                                    <li><i class="bi bi-display text-danger me-2"></i>Layar 13.3" FHD IPS Anti-Glare</li>
+                                </ul>
+                                <div class="mt-auto pt-3 border-top d-flex flex-column gap-2">
+                                    <div class="d-flex justify-content-between align-items-baseline">
+                                        <span class="text-muted small">Harga:</span>
+                                        <span class="text-danger fw-bold fs-5">Rp 6.850.000</span>
+                                    </div>
+                                    <a href="#" class="btn btn-danger w-100 fw-semibold">
+                                        <i class="bi bi-cart-plus me-1"></i> Beli Sekarang
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-sm-6 col-lg-4">
+                        <div class="card h-100 shadow-sm rounded-3 card-product overflow-hidden">
+                            <div class="position-relative">
+                                <img src="./T14.png" onerror="this.onerror=null; this.src='https://placehold.co/600x400/f1f3f5/dc3545?text=ThinkPad+T14';" class="card-img-top product-img" alt="Lenovo ThinkPad T14">
+                            </div>
+                            <div class="card-body d-flex flex-column p-4">
+                                <h5 class="card-title fw-bold text-dark mb-1">Lenovo ThinkPad T14</h5>
+                                <p class="card-text text-muted small mb-3">
+                                    Durabilitas standar militer dengan keyboard ikonik paling nyaman di kelasnya. Performa tinggi untuk multitasking.
+                                </p>
+                                <ul class="list-unstyled small text-secondary mb-4">
+                                    <li><i class="bi bi-cpu text-danger me-2"></i>Intel Core i5 Gen 10</li>
+                                    <li><i class="bi bi-memory text-danger me-2"></i>RAM 16GB / SSD 512GB NVMe</li>
+                                    <li><i class="bi bi-display text-danger me-2"></i>Layar 14" FHD IPS 300 nits</li>
+                                </ul>
+                                <div class="mt-auto pt-3 border-top d-flex flex-column gap-2">
+                                    <div class="d-flex justify-content-between align-items-baseline">
+                                        <span class="text-muted small">Harga:</span>
+                                        <span class="text-danger fw-bold fs-5">Rp 8.200.000</span>
+                                    </div>
+                                    <a href="#" class="btn btn-danger w-100 fw-semibold">
+                                        <i class="bi bi-cart-plus me-1"></i> Beli Sekarang
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-sm-6 col-lg-4">
+                        <div class="card h-100 shadow-sm rounded-3 card-product overflow-hidden">
+                            <div class="position-relative">
+                                <img src="./E470.png" onerror="this.onerror=null; this.src='https://placehold.co/600x400/f1f3f5/dc3545?text=ThinkPad+E470';" class="card-img-top product-img" alt="Lenovo ThinkPad E470">
+                            </div>
+                            <div class="card-body d-flex flex-column p-4">
+                                <h5 class="card-title fw-bold text-dark mb-1">Lenovo ThinkPad E470</h5>
+                                <p class="card-text text-muted small mb-3">
+                                    Pilihan laptop handal dengan kartu grafis tambahan untuk komputasi harian, rendering ringan, dan editing santai.
+                                </p>
+                                <ul class="list-unstyled small text-secondary mb-4">
+                                    <li><i class="bi bi-cpu text-danger me-2"></i>Intel Core i5 Gen 7</li>
+                                    <li><i class="bi bi-memory text-danger me-2"></i>RAM 8GB / SSD 256GB</li>
+                                    <li><i class="bi bi-gpu-card text-danger me-2"></i>Nvidia GeForce 940MX</li>
+                                </ul>
+                                <div class="mt-auto pt-3 border-top d-flex flex-column gap-2">
+                                    <div class="d-flex justify-content-between align-items-baseline">
+                                        <span class="text-muted small">Harga:</span>
+                                        <span class="text-danger fw-bold fs-5">Rp 4.950.000</span>
+                                    </div>
+                                    <a href="#" class="btn btn-danger w-100 fw-semibold">
+                                        <i class="bi bi-cart-plus me-1"></i> Beli Sekarang
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-sm-6 col-lg-4">
+                        <div class="card h-100 shadow-sm rounded-3 card-product overflow-hidden">
+                            <div class="position-relative">
+                                <img src="./T460.png" onerror="this.onerror=null; this.src='https://placehold.co/600x400/f1f3f5/dc3545?text=ThinkPad+T460';" class="card-img-top product-img" alt="Lenovo ThinkPad T460">
+                            </div>
+                            <div class="card-body d-flex flex-column p-4">
+                                <h5 class="card-title fw-bold text-dark mb-1">Lenovo ThinkPad T460</h5>
+                                <p class="card-text text-muted small mb-3">
+                                    Keseimbangan ideal antara efisiensi baterai dan ketahanan fisik. Paling pas untuk pekerja kantor dan mahasiswa.
+                                </p>
+                                <ul class="list-unstyled small text-secondary mb-4">
+                                    <li><i class="bi bi-cpu text-danger me-2"></i>Intel Core i5 Gen 6</li>
+                                    <li><i class="bi bi-memory text-danger me-2"></i>RAM 8GB / SSD 256GB</li>
+                                    <li><i class="bi bi-battery-charging text-danger me-2"></i>Sistem Dual Battery Awet</li>
+                                </ul>
+                                <div class="mt-auto pt-3 border-top d-flex flex-column gap-2">
+                                    <div class="d-flex justify-content-between align-items-baseline">
+                                        <span class="text-muted small">Harga:</span>
+                                        <span class="text-danger fw-bold fs-5">Rp 4.300.000</span>
+                                    </div>
+                                    <a href="#" class="btn btn-danger w-100 fw-semibold">
+                                        <i class="bi bi-cart-plus me-1"></i> Beli Sekarang
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-sm-6 col-lg-4">
+                        <div class="card h-100 shadow-sm rounded-3 card-product overflow-hidden">
+                            <div class="position-relative">
+                                <img src="./X13.png" onerror="this.onerror=null; this.src='https://placehold.co/600x400/f1f3f5/dc3545?text=ThinkPad+X13';" class="card-img-top product-img" alt="Lenovo ThinkPad X13">
+                            </div>
+                            <div class="card-body d-flex flex-column p-4">
+                                <h5 class="card-title fw-bold text-dark mb-1">Lenovo ThinkPad X13</h5>
+                                <p class="card-text text-muted small mb-3">
+                                    Dimensi ultra-ringkas 13.3 inci dengan bobot super enteng, sangat nyaman untuk yang sering bepergian dan presentasi.
+                                </p>
+                                <ul class="list-unstyled small text-secondary mb-4">
+                                    <li><i class="bi bi-cpu text-danger me-2"></i>AMD Ryzen 5 Pro / Core i5 Gen 10</li>
+                                    <li><i class="bi bi-memory text-danger me-2"></i>RAM 16GB / SSD 512GB</li>
+                                    <li><i class="bi bi-feather text-danger me-2"></i>Bobot hanya 1.2 kg</li>
+                                </ul>
+                                <div class="mt-auto pt-3 border-top d-flex flex-column gap-2">
+                                    <div class="d-flex justify-content-between align-items-baseline">
+                                        <span class="text-muted small">Harga:</span>
+                                        <span class="text-danger fw-bold fs-5">Rp 7.450.000</span>
+                                    </div>
+                                    <a href="#" class="btn btn-danger w-100 fw-semibold">
+                                        <i class="bi bi-cart-plus me-1"></i> Beli Sekarang
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-sm-6 col-lg-4">
+                        <div class="card h-100 shadow-sm rounded-3 card-product overflow-hidden">
+                            <div class="position-relative">
+                                <img src="./X270.png" onerror="this.onerror=null; this.src='https://placehold.co/600x400/f1f3f5/dc3545?text=ThinkPad+X270';" class="card-img-top product-img" alt="Lenovo ThinkPad X270">
+                            </div>
+                            <div class="card-body d-flex flex-column p-4">
+                                <h5 class="card-title fw-bold text-dark mb-1">Lenovo ThinkPad X270</h5>
+                                <p class="card-text text-muted small mb-3">
+                                    Laptop mungil 12.5 inci legendaris yang kokoh, mudah masuk tas ransel, dan cocok untuk kegiatan lapangan.
+                                </p>
+                                <ul class="list-unstyled small text-secondary mb-4">
+                                    <li><i class="bi bi-cpu text-danger me-2"></i>Intel Core i5 Gen 7</li>
+                                    <li><i class="bi bi-memory text-danger me-2"></i>RAM 8GB / SSD 256GB</li>
+                                    <li><i class="bi bi-display text-danger me-2"></i>Ukuran Layar 12.5" HD/FHD</li>
+                                </ul>
+                                <div class="mt-auto pt-3 border-top d-flex flex-column gap-2">
+                                    <div class="d-flex justify-content-between align-items-baseline">
+                                        <span class="text-muted small">Harga:</span>
+                                        <span class="text-danger fw-bold fs-5">Rp 3.900.000</span>
+                                    </div>
+                                    <a href="#" class="btn btn-danger w-100 fw-semibold">
+                                        <i class="bi bi-cart-plus me-1"></i> Beli Sekarang
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section id="layanan" class="py-5 bg-white border-top border-bottom">
+            <div class="container text-center">
+                <div class="mb-5">
+                    <h2 class="fw-bold text-dark">Layanan Purna Jual Unggulan</h2>
+                    <p class="text-muted mx-auto" style="max-width: 600px;">
+                        Memberikan rasa aman dan kenyamanan maksimal untuk setiap pembeli di LaptopIN.
+                    </p>
+                </div>
+
+                <div class="row g-4">
+                    <div class="col-12 col-md-4">
+                        <div class="p-4 bg-light rounded-3 h-100 border-0 shadow-sm d-flex flex-column align-items-center">
+                            <div class="bg-danger text-white rounded-circle d-flex align-items-center justify-content-center mb-3" style="width: 65px; height: 65px;">
+                                <i class="bi bi-laptop fs-3"></i>
+                            </div>
+                            <h5 class="fw-bold mb-2">Siap Pakai Langsung</h5>
+                            <p class="text-muted small mb-0">
+                                Sudah terinstal OS Windows terbaru, Microsoft Office lengkap, serta browser dan utilitas harian siap pakai.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-md-4">
+                        <div class="p-4 bg-light rounded-3 h-100 border-0 shadow-sm d-flex flex-column align-items-center">
+                            <div class="bg-danger text-white rounded-circle d-flex align-items-center justify-content-center mb-3" style="width: 65px; height: 65px;">
+                                <i class="bi bi-shield-check fs-3"></i>
+                            </div>
+                            <h5 class="fw-bold mb-2">Garansi Terpercaya</h5>
+                            <p class="text-muted small mb-0">
+                                Jaminan garansi toko hingga 1 bulan untuk sparepart, serta garansi tukar unit jika ditemukan kendala fungsional.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="col-12 col-md-4">
+                        <div class="p-4 bg-light rounded-3 h-100 border-0 shadow-sm d-flex flex-column align-items-center">
+                            <div class="bg-danger text-white rounded-circle d-flex align-items-center justify-content-center mb-3" style="width: 65px; height: 65px;">
+                                <i class="bi bi-tools fs-3"></i>
+                            </div>
+                            <h5 class="fw-bold mb-2">Bebas Upgrade RAM & SSD</h5>
+                            <p class="text-muted small mb-0">
+                                Bebas request tambah RAM 16GB atau SSD 1TB sebelum dikirim, dipasang langsung oleh teknisi berpengalaman.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="tentang" class="py-5">
+            <div class="container text-center">
+                <div class="row justify-content-center">
+                    <div class="col-12 col-lg-8">
+                        <i class="bi bi-shop fs-1 text-danger mb-3 d-inline-block"></i>
+                        <h2 class="fw-bold mb-3 text-dark">Tentang Toko LaptopIN</h2>
+                        <p class="text-muted leading-relaxed mb-0">
+                            LaptopIN adalah pusat penyedia laptop bisnis berkualitas grade A+. Kami berkomitmen memberikan transparansi spesifikasi, unit teruji quality control ketat, dan harga terjangkau untuk pelajar, mahasiswa, serta profesional.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
     </main>
 
-
-    <footer>
-        <p class="text-center bg-danger">&copy; Laptop<strong>IN</strong></p>
+    <footer class="mt-auto bg-danger text-white py-4 border-top border-danger-subtle">
+        <div class="container">
+            <div class="row align-items-center gy-3 text-center text-md-start">
+                <div class="col-12 col-md-6">
+                    <h5 class="fw-bold mb-1">Laptop<strong class="text-warning">IN</strong></h5>
+                    <p class="small text-white-50 mb-0">Laptop murah & bergaransi.</p>
+                </div>
+                <div class="col-12 col-md-6 text-md-end">
+                    <p class="small mb-0 text-white">&copy; 2026 Laptop<strong>IN</strong>. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
     </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
 </html>
